@@ -15,8 +15,8 @@ export class MyApp {
   pages: Array<{title: string, component: string}>;
 
   constructor(
-    public platform: Platform, 
-    public statusBar: StatusBar, 
+    public platform: Platform,
+    public statusBar: StatusBar,
     public splashScreen: SplashScreen,
     public auth: AuthService
   ) {
@@ -46,7 +46,7 @@ export class MyApp {
     switch (page.title) {
       case 'Logout':
       this.auth.logout();
-      this.nav.setRoot('HomePage');
+      this.nav.setRoot('IndexPage');
       break;
 
       default:

@@ -1,0 +1,68 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+
+    <ion-card class="welcome-card">
+      <img src="/assets/imgs/shapes.svg" alt="" />
+      <ion-card-header>
+        <ion-card-title>SisWeb CRIA - Sistema Web do Projeto CRIA</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p> Projeto Cadeira de Rodas Infantil Automatizada</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-list lines="none">
+        <ion-list-header>
+          <ion-label>
+            <h2>Login no Sistema: </h2>
+            <p>Clique abaixo para entrar no sistema com seu email cadastrado</p>
+          </ion-label>
+
+      </ion-list-header>
+        <ion-item>
+            <div class="ion-padding">
+              <button ion-button block outline (click)="gologin()">Login de Usuário</button>
+            </div>
+        </ion-item>
+
+        <ion-list-header>
+            <ion-label>Fazendo o cadastro e login, o usuário concorda com os Termos de Uso da UNIFESP.</ion-label>
+        </ion-list-header>
+        <ion-item>
+        <div>
+          <a  href="#" onclick="window.open('https://www.unifesp.br/termos-de-uso', '_system', 'location=yes'); return false;"> Termos de Uso - UNIFESP</a>
+        </div>
+      </ion-item>
+
+        <ion-list-header>
+          <ion-label>Clique abaixo para cadastrar-se como um novo usuário.</ion-label>
+      </ion-list-header>
+        <ion-item>
+            <div class="ion-padding">
+                <button ion-button block outline (click)="signup()">Novo Usuário</button>
+            </div>
+        </ion-item>
+
+        <ion-list-header>
+            <ion-label>Se tiver alguma dúvida ou problemas com cadastro ou login, clique abaixo.</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <div>
+            <a  href="#" onclick="window.open('https://www.unifesp.br/campus/sjc/fale-conosco.html', '_system', 'location=yes'); return false;"> Fale conosco - UNIFESP</a>
+          </div>
+        </ion-item>
+
+    </ion-list>
+  </div>
+
+</ion-content>
+

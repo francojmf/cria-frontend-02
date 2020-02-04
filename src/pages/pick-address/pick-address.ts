@@ -18,7 +18,7 @@ export class PickAddressPage {
   pedido: PedidoDTO;
 
   constructor(
-    public navCtrl: NavController, 
+    public navCtrl: NavController,
     public navParams: NavParams,
     public storage: StorageService,
     public clienteService: ClienteService,
@@ -37,7 +37,7 @@ export class PickAddressPage {
           this.pedido = {
             cliente: {id: response['id']},
             enderecoDeEntrega: null,
-            pagamento: null,
+            entrega: null,
             itens : cart.items.map(x => {return {quantidade: x.quantidade, produto: {id: x.produto.id}}})
           }
         },

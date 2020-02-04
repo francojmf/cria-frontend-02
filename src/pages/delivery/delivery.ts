@@ -5,32 +5,36 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @IonicPage()
 @Component({
-  selector: 'page-payment',
-  templateUrl: 'payment.html',
+  selector: 'page-delivery',
+  templateUrl: 'delivery.html',
 })
-export class PaymentPage {
+export class DeliveryPage {
 
   pedido: PedidoDTO;
+  dias: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-  parcelas: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  // data_entrega: string;
+  // data_envio: string;
 
   formGroup: FormGroup;
 
   constructor(
-    public navCtrl: NavController, 
+    public navCtrl: NavController,
     public navParams: NavParams,
     public formBuilder: FormBuilder) {
 
     this.pedido = this.navParams.get('pedido');
 
     this.formGroup = this.formBuilder.group({
-      numeroDeParcelas: [1, Validators.required],
-      "@type": ["pagamentoComCartao", Validators.required]
+      numeroDeDias: [1],
+      "@type": ["correios"]
     });
+    //  data_entrega: ["previsto"],
+    //  data_envio: ["enviado"],
   }
 
   nextPage() {
-    this.pedido.pagamento = this.formGroup.value;
+    this.pedido.entrega = this.formGroup.value;
     this.navCtrl.setRoot('OrderConfirmationPage', {pedido: this.pedido});
   }
 }
