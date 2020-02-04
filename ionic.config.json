@@ -1,0 +1,7 @@
+{
+  "name": "CriaSpringIonic",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
