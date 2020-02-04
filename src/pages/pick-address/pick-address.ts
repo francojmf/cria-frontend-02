@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { EnderecoDTO } from '../../models/endereco.dto';
 import { StorageService } from '../../services/storage.service';
-import { ClienteService } from '../../services/domain/cliente.service';
+import { UsuarioService } from '../../services/domain/usuario.service';
 import { PedidoDTO } from '../../models/pedido.dto';
 import { CartService } from '../../services/domain/cart.service';
 
@@ -21,14 +21,14 @@ export class PickAddressPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public storage: StorageService,
-    public clienteService: ClienteService,
+    public usuarioService: UsuarioService,
     public cartService: CartService) {
   }
 
   ionViewDidLoad() {
     let localUser = this.storage.getLocalUser();
     if (localUser && localUser.email) {
-      this.clienteService.findByEmail(localUser.email)
+      this.usuarioService.findByEmail(localUser.email)
         .subscribe(response => {
           this.items = response['enderecos'];
 

@@ -1,4 +1,4 @@
-export interface ClienteDTO {
+export interface UsuarioDTO {
     id : string;
     nome : string;
     email : string;

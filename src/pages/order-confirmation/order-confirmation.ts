@@ -3,8 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PedidoDTO } from '../../models/pedido.dto';
 import { CartItem } from '../../models/cart-item';
 import { EnderecoDTO } from '../../models/endereco.dto';
-import { ClienteDTO } from '../../models/cliente.dto';
-import { ClienteService } from '../../services/domain/cliente.service';
+import { UsuarioDTO } from '../../models/usuario.dto';
+import { UsuarioService} from '../../services/domain/usuario.service';
 import { CartService } from '../../services/domain/cart.service';
 import { PedidoService } from '../../services/domain/pedido.service';
 
@@ -17,14 +17,14 @@ export class OrderConfirmationPage {
 
   pedido: PedidoDTO;
   cartItems: CartItem[];
-  cliente: ClienteDTO;
+  usuario: UsuarioDTO;
   endereco: EnderecoDTO;
   codpedido: string;
 
   constructor(
-    public navCtrl: NavController, 
+    public navCtrl: NavController,
     public navParams: NavParams,
-    public clienteService: ClienteService,
+    public usuarioService: UsuarioService,
     public cartService: CartService,
     public pedidoService: PedidoService) {
 
@@ -34,13 +34,13 @@ export class OrderConfirmationPage {
   ionViewDidLoad() {
     this.cartItems = this.cartService.getCart().items;
 
-    this.clienteService.findById(this.pedido.cliente.id)
+    this.usuarioService.findById(this.pedido.usuario.id)
       .subscribe(response => {
-        this.cliente = response as ClienteDTO;
+        this.usuario = response as UsuarioDTO;
         this.endereco = this.findEndereco(this.pedido.enderecoDeEntrega.id, response['enderecos']);
       },
       error => {
-        this.navCtrl.setRoot('HomePage');
+        this.navCtrl.setRoot('MenuPage');
       });
   }
 
@@ -49,16 +49,12 @@ export class OrderConfirmationPage {
     return list[position];
   }
 
-  total() : number {
-    return this.cartService.total();
-  } 
-
   back() {
     this.navCtrl.setRoot('CartPage');
   }
 
   home() {
-    this.navCtrl.setRoot('CategoriasPage');
+    this.navCtrl.setRoot('MenuPage');
   }
 
   checkout() {
@@ -69,7 +65,7 @@ export class OrderConfirmationPage {
       },
       error => {
         if (error.status == 403) {
-          this.navCtrl.setRoot('HomePage');
+          this.navCtrl.setRoot('MenuPage');
         }
       });
   }

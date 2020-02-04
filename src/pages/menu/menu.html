@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
         <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>Menu Principal</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -23,45 +23,34 @@
     <ion-list lines="none">
         <ion-list-header>
           <ion-label>
-            <h2>Login no Sistema: </h2>
-            <p>Clique abaixo para entrar no sistema com seu email cadastrado.</p>
+            <h2>Pedido de uma CRIA: </h2>
+            <p>Para solicitar uma CRIA é necessário preencher as informações referentes à criança que será beneficiada, incluindo as medidas necessárias para a confecção.</p>
+            <p>Se os dados não  estiverem completos, o pedido não será autorizado. Podem ser pedidas informações adicionais via e-mail.</p>
+            <p>Clique abaixo para fazer um pedido.</p>
           </ion-label>
-
       </ion-list-header>
         <ion-item>
             <div class="ion-padding">
-              <button ion-button block outline (click)="gologin()">Login de Usuário</button>
+              <button ion-button block outline (click)="order()">Pedido de CRIA</button>
             </div>
         </ion-item>
 
         <ion-list-header>
-            <ion-label>
-              <h2>Aviso: </h2>
-              <p>Fazendo o cadastro e login, o usuário concorda com os Termos de Uso da UNIFESP.</p>
-            </ion-label>
-        </ion-list-header>
-        <ion-item>
-        <div>
-          <a  href="#" onclick="window.open('https://www.unifesp.br/termos-de-uso', '_system', 'location=yes'); return false;"> Termos de Uso - UNIFESP</a>
-        </div>
-      </ion-item>
-
-        <ion-list-header>
           <ion-label>
-            <h2>Se ainda não tiver cadastro: </h2>
-            <p>Clique abaixo para cadastrar-se como um novo usuário.</p>
+            <h2>Seu cadastro: </h2>
+            <p>Clique abaixo para ver ou alterar seu cadastro.</p>
           </ion-label>
       </ion-list-header>
         <ion-item>
             <div class="ion-padding">
-                <button ion-button block outline (click)="signup()">Novo Usuário</button>
+                <button ion-button block outline (click)="profile()">Perfil de Usuário</button>
             </div>
         </ion-item>
 
         <ion-list-header>
             <ion-label>
               <h2>Fale conosco: </h2>
-              <p>Se tiver alguma dúvida, ou problemas com cadastro ou login, clique abaixo.</p>
+              <p>Se tiver alguma dúvida, ou problemas com seu cadastro ou pedido, clique abaixo.</p>
               </ion-label>
         </ion-list-header>
         <ion-item>

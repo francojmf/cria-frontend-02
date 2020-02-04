@@ -5,7 +5,7 @@ import { CidadeService } from '../../services/domain/cidade.service';
 import { EstadoService } from '../../services/domain/estado.service';
 import { EstadoDTO } from '../../models/estado.dto';
 import { CidadeDTO } from '../../models/cidade.dto';
-import { ClienteService } from '../../services/domain/cliente.service';
+import { UsuarioService } from '../../services/domain/usuario.service';
 import { AlertController } from 'ionic-angular/components/alert/alert-controller';
 
 @IonicPage()
@@ -20,12 +20,12 @@ export class SignupPage {
   cidades: CidadeDTO[];
 
   constructor(
-    public navCtrl: NavController, 
+    public navCtrl: NavController,
     public navParams: NavParams,
     public formBuilder: FormBuilder,
     public cidadeService: CidadeService,
     public estadoService: EstadoService,
-    public clienteService: ClienteService,
+    public usuarioService: UsuarioService,
     public alertCtrl: AlertController) {
 
     this.formGroup = this.formBuilder.group({
@@ -43,7 +43,7 @@ export class SignupPage {
       telefone2 : ['', []],
       telefone3 : ['', []],
       estadoId : [null, [Validators.required]],
-      cidadeId : [null, [Validators.required]]      
+      cidadeId : [null, [Validators.required]]
     });
   }
 
@@ -68,7 +68,7 @@ export class SignupPage {
   }
 
   signupUser() {
-    this.clienteService.insert(this.formGroup.value)
+    this.usuarioService.insert(this.formGroup.value)
       .subscribe(response => {
         this.showInsertOk();
       },
