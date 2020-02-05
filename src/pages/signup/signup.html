@@ -1,11 +1,11 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Signup</ion-title>
+    <ion-title>Novo Cadastro</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <form [formGroup]="formGroup" (ngSubmit)="signupUser(); $event.preventDefault()">
+  <form [formGroup]="formGroup" (ngSubmit)="signupUser()">
     <ion-item>
       <ion-label stacked>Nome*</ion-label>
       <ion-input formControlName="nome" type="text"></ion-input>
@@ -38,7 +38,7 @@
     <ion-item>
       <ion-label stacked>Senha*</ion-label>
       <ion-input formControlName="senha" type="password"></ion-input>
-    </ion-item> 
+    </ion-item>
     <p class="danger" *ngIf="formGroup.controls.senha.dirty && formGroup.controls.senha.errors" margin-left>Valor inválido</p>
     <ion-item>
       <ion-label stacked>Logradouro*</ion-label>
