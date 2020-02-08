@@ -88,6 +88,10 @@
         <ion-option *ngFor="let cidade of cidades" [value]="cidade.id">{{cidade.nome}}</ion-option>
       </ion-select>
     </ion-item>
-    <button ion-button block type="submit" [disabled]="formGroup.invalid">Criar conta</button>
+    <button ion-button block type="submit" [disabled]="formGroup.invalid">Criar cadastro</button>
   </form>
+
+  <ion-item>
+    <button ion-button block outline (click)="back()">Voltar</button>
+  </ion-item>
 </ion-content>

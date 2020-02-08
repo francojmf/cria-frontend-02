@@ -49,6 +49,10 @@ export class HomePage {
       error => {});
   }
 
+  back() {
+    this.navCtrl.push('IndexPage');
+  }
+
   signup() {
     this.navCtrl.push('SignupPage');
   }

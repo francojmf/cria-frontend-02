@@ -91,4 +91,9 @@ export class SignupPage {
     });
     alert.present();
   }
+
+  back() {
+    this.navCtrl.push('IndexPage');
+  }
+
 }
