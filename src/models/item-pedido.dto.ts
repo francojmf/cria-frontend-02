@@ -1,5 +1,5 @@
 import { RefDTO } from "./ref.dto";
-import { PedidoDTO } from "./pedido.dto";
+import { PedidosDTO } from "./pedidos.dto";
 
 export interface ItemPedidoDTO {
     quantidade: number;

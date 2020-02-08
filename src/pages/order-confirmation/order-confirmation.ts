@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { PedidoDTO } from '../../models/pedido.dto';
+import { PedidosDTO } from '../../models/pedidos.dto';
 import { CartItem } from '../../models/cart-item';
-import { EnderecoDTO } from '../../models/endereco.dto';
+import { EnderecosDTO } from '../../models/enderecos.dto';
 import { UsuarioDTO } from '../../models/usuario.dto';
 import { UsuarioService} from '../../services/domain/usuario.service';
 import { CartService } from '../../services/domain/cart.service';
@@ -15,10 +15,10 @@ import { PedidoService } from '../../services/domain/pedido.service';
 })
 export class OrderConfirmationPage {
 
-  pedido: PedidoDTO;
+  pedido: PedidosDTO;
   cartItems: CartItem[];
   usuario: UsuarioDTO;
-  endereco: EnderecoDTO;
+  endereco: EnderecosDTO;
   codpedido: string;
 
   constructor(
@@ -28,7 +28,7 @@ export class OrderConfirmationPage {
     public cartService: CartService,
     public pedidoService: PedidoService) {
 
-    this.pedido = this.navParams.get('pedido');
+    this.pedido = this.navParams.get('pedidos');
   }
 
   ionViewDidLoad() {
@@ -44,7 +44,7 @@ export class OrderConfirmationPage {
       });
   }
 
-  private findEndereco(id: string, list: EnderecoDTO[]) : EnderecoDTO {
+  private findEndereco(id: string, list: EnderecosDTO[]) : EnderecosDTO {
     let position = list.findIndex(x => x.id == id);
     return list[position];
   }

@@ -2,4 +2,12 @@ page-produto-detail  {
   .danger {
       color: red;
   }
+
+  ion-grid {
+    height: 100%;
+
+    ion-row {
+      max-height: 33.33%;
+    }
+  }
 }

@@ -10,11 +10,14 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 @Component({
   selector: 'page-produto-detail',
   templateUrl: 'produto-detail.html',
+
 })
 export class ProdutoDetailPage {
 
   item: ProdutoDTO;
   formGroup: FormGroup;
+//  image1: 'https://s3.console.aws.amazon.com/s3/buckets/cria01/medidas.jpg';
+  selectedImage: 'src/assets/imgs/medidas.jpg';
 
   constructor(
     public navCtrl: NavController,
@@ -58,5 +61,9 @@ export class ProdutoDetailPage {
     this.navCtrl.setRoot('CartPage');
 //    this.navCtrl.setRoot('DeliveryPage');
 //    this.navCtrl.setRoot('PickAddressPage');
+  }
+
+  back() {
+    this.navCtrl.push('IndexPage');
   }
 }

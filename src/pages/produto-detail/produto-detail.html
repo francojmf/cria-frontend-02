@@ -8,21 +8,15 @@
 </ion-header>
 
 <ion-content padding>
+
+  <img src="assets/imgs/medidas.jpg" alt="logo">
   <ion-fab top right edge>
     <button navPush="CartPage" ion-fab mini><ion-icon name="cart"></ion-icon></button>
   </ion-fab>
+
   <ion-card>
-
-    <ion-card-content>
-          <img width="300" height="300" [src]="item?.imageUrl || 'assets/imgs/prod.jpg'" alt=""/>
-      <ion-card-title>
-        {{item?.nome}}
-        </ion-card-title>
-      <p>
-      </p>
-    </ion-card-content>
-
      <form [formGroup]="formGroup" (ngSubmit)="addToCart(item)">
+
       <ion-item>
         <ion-label stacked>Nome*</ion-label>
         <ion-input formControlName="nome" type="text"></ion-input>
@@ -59,11 +53,17 @@
         <ion-label stacked>Descrição</ion-label>
         <ion-input formControlName="descricao" type="text"></ion-input>
       </ion-item>
-
+      <ion-card>
+      <ion-card-content>
+        <p>
+          {{item?.nome}}
+        </p>
+      </ion-card-content>
+    </ion-card>
       <button ion-button block type="submit" >Fazer o pedido</button>
     </form>
 
   </ion-card>
 
-  <button ion-button block outline (click)="addToCart(item)">Voltar</button>
+  <button ion-button block outline (click)="back()">Voltar</button>
 </ion-content>

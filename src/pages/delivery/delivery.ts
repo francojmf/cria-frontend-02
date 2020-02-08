@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { PedidoDTO } from '../../models/pedido.dto';
+import { PedidosDTO } from '../../models/pedidos.dto';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @IonicPage()
@@ -10,7 +10,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class DeliveryPage {
 
-  pedido: PedidoDTO;
+  pedido: PedidosDTO;
   dias: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   // data_entrega: string;

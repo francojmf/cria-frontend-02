@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { EnderecoDTO } from '../../models/endereco.dto';
+import { EnderecosDTO } from '../../models/enderecos.dto';
 import { StorageService } from '../../services/storage.service';
 import { UsuarioService } from '../../services/domain/usuario.service';
-import { PedidoDTO } from '../../models/pedido.dto';
+import { PedidosDTO } from '../../models/pedidos.dto';
 import { CartService } from '../../services/domain/cart.service';
 
 @IonicPage()
@@ -13,9 +13,9 @@ import { CartService } from '../../services/domain/cart.service';
 })
 export class PickAddressPage {
 
-  items: EnderecoDTO[];
+  items: EnderecosDTO[];
 
-  pedido: PedidoDTO;
+  pedido: PedidosDTO;
 
   constructor(
     public navCtrl: NavController,
@@ -52,7 +52,7 @@ export class PickAddressPage {
     }
   }
 
-  nextPage(item: EnderecoDTO) {
+  nextPage(item: EnderecosDTO) {
     this.pedido.enderecoDeEntrega = {id: item.id};
     this.navCtrl.push('DeliveryPage', {pedido: this.pedido});
     //    this.navCtrl.setRoot('OrderConfirmation');
