@@ -10,4 +10,5 @@ import { OrderDetailPage } from './order-detail';
     IonicPageModule.forChild(OrderDetailPage),
   ],
 })
+
 export class OrderDetailPageModule {}

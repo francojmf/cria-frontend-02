@@ -12,16 +12,58 @@
     <button navPush="CartPage" ion-fab mini><ion-icon name="cart"></ion-icon></button>
   </ion-fab>
   <ion-card>
-    <img width="200" height="200" [src]="item?.imageUrl || 'assets/imgs/prod.jpg'" alt=""/>
+
     <ion-card-content>
+          <img width="300" height="300" [src]="item?.imageUrl || 'assets/imgs/prod.jpg'" alt=""/>
       <ion-card-title>
         {{item?.nome}}
         </ion-card-title>
       <p>
-
       </p>
     </ion-card-content>
+
+     <form [formGroup]="formGroup" (ngSubmit)="addToCart(item)">
+      <ion-item>
+        <ion-label stacked>Nome*</ion-label>
+        <ion-input formControlName="nome" type="text"></ion-input>
+      </ion-item>
+      <p class="danger" *ngIf="formGroup.controls.nome.dirty && formGroup.controls.nome.errors" margin-left>Valor inválido</p>
+
+      <ion-item>
+        <ion-label stacked>Medida A*</ion-label>
+        <ion-input formControlName="med_a" type="text"></ion-input>
+      </ion-item>
+      <p class="danger" *ngIf="formGroup.controls.med_a.errors" margin-left>Valor inválido</p>
+      <ion-item>
+        <ion-label stacked>Medida B*</ion-label>
+        <ion-input formControlName="med_b" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Medida C*</ion-label>
+        <ion-input formControlName="med_c" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Medida D*</ion-label>
+        <ion-input formControlName="med_d" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Medida E*</ion-label>
+        <ion-input formControlName="med_e" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Medida F*</ion-label>
+        <ion-input formControlName="med_f" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Descrição</ion-label>
+        <ion-input formControlName="descricao" type="text"></ion-input>
+      </ion-item>
+
+      <button ion-button block type="submit" >Fazer o pedido</button>
+    </form>
+
   </ion-card>
 
-  <button ion-button block outline (click)="addToCart(item)">Adicionar ao pedido</button>
+  <button ion-button block outline (click)="addToCart(item)">Voltar</button>
 </ion-content>

@@ -10,20 +10,43 @@
 <ion-content padding>
 
   <form [formGroup]="formGroup" (ngSubmit)="nextPage()">
-    <ion-list radio-group formControlName="@type">
-      <ion-list-header>
-        Detalhes do pedido
-      </ion-list-header>
       <ion-item>
-        <ion-label>Nome da criança</ion-label>
+        <ion-label stacked>Nome*</ion-label>
+        <ion-input formControlName="nome" type="text"></ion-input>
+      </ion-item>
+      <p class="danger" *ngIf="formGroup.controls.nome.dirty && formGroup.controls.nome.errors" margin-left>Valor inválido</p>
 
+      <ion-item>
+        <ion-label stacked>Medida A*</ion-label>
+        <ion-input formControlName="med_a" type="text"></ion-input>
+      </ion-item>
+      <p class="danger" *ngIf="formGroup.controls.med_a.errors" margin-left>Valor inválido</p>
+      <ion-item>
+        <ion-label stacked>Medida B*</ion-label>
+        <ion-input formControlName="med_b" type="text"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label>Detalhes</ion-label>
-
+        <ion-label stacked>Medida C*</ion-label>
+        <ion-input formControlName="med_c" type="text"></ion-input>
       </ion-item>
-    </ion-list>
+      <ion-item>
+        <ion-label stacked>Medida D*</ion-label>
+        <ion-input formControlName="med_d" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Medida E*</ion-label>
+        <ion-input formControlName="med_e" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Medida F*</ion-label>
+        <ion-input formControlName="med_f" type="text"></ion-input>
+      </ion-item>
 
-    <button ion-button block type="submit" [disabled]="formGroup.invalid">Próximo</button>
+      <ion-item>
+        <ion-label stacked>Descrição</ion-label>
+        <ion-input formControlName="descricao" type="text"></ion-input>
+      </ion-item>
+
+      <button ion-button block type="submit" [disabled]="formGroup.invalid">Enviar dados</button>
   </form>
 </ion-content>
