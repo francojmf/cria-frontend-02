@@ -17,10 +17,10 @@ export class IndexPage {
   }
 
   gologin() {
-    this.navCtrl.push('HomePage');
+    this.navCtrl.setRoot('HomePage');
   }
 
   signup() {
-    this.navCtrl.push('SignupPage');
+    this.navCtrl.setRoot('SignupPage');
   }
 }

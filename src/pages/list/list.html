@@ -18,14 +18,16 @@
     <img   src="" />
   </ion-avatar>
   <ion-list>
-    <ion-card *ngFor="let pedido of pedidos | async">
-      <ion-card-header>
-        {{nome}}
-      </ion-card-header>
-      <ion-card-content>
-        <h3 text-center>{{descricao}}</h3>
-      </ion-card-content>
-    </ion-card>
+    <ion-item *ngFor="let pedidos of pedidos">
+        <h2 style="font-weight: bolder">Usuário: {{pedidos.id}} Pedido: {{pedidos.ped}} Criança: {{pedidos.nome}}</h2>
+        <h3>Tipo CRIA: {{pedidos.produto}} Medidas A: {{pedidos.med_a}} B: {{pedidos.med_b}}
+           C: {{pedidos.med_c}} D: {{pedidos.med_d}} E: {{pedidos.med_e}} F: {{pedidos.med_f}} Descrição: {{pedidos.descricao}}</h3>
+    </ion-item>
+
   </ion-list>
+
+  <ion-item>
+    <button ion-button block outline (click)="back()">Voltar</button>
+  </ion-item>
 </ion-content>
 

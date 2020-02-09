@@ -38,6 +38,7 @@ export class PickAddressPage {
             usuario: {id: response['id']},
             enderecoDeEntrega: null,
             entrega: null,
+            item: [],
             itens : cart.items.map(x => {return {quantidade: x.quantidade, produto: {id: x.produto.id}}})
           }
         },

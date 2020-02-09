@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators/map';
-import { environment as ENV } from '../../enviroments/environment';
+import { environment as ENV } from '../../environments/environment';
 
 /*
   Generated class for the DetailProvider provider.

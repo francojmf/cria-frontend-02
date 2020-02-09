@@ -20,6 +20,9 @@ export class MenuPage {
     this.navCtrl.push('CategoriasPage');
   }
 
+  pedidos() {
+    this.navCtrl.push('ListPage');
+  }
   profile() {
     this.navCtrl.push('ProfilePage');
   }

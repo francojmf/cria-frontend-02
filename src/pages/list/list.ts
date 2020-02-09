@@ -1,10 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavParams, NavController } from 'ionic-angular';
-import { Observable } from 'rxjs/Observable';
-import { PedidosDTO } from '../../models/pedidos.dto';
-import { PedidoService } from '../../services/domain/pedido.service';
-import { ItemDTO } from '../../models/item.dto';
-import { ItemPedidoDTO } from '../../models/item-pedido.dto';
+
 
 
 @IonicPage()
@@ -14,20 +10,29 @@ import { ItemPedidoDTO } from '../../models/item-pedido.dto';
 })
 export class ListPage {
 
-  pedidos: PedidosDTO;
-  nome: ItemDTO['nome'];
-  descricao: ItemDTO['descricao'];
-  pedidoService: any;
+  public pedidos;
+  navCtrl: any;
+
 
   constructor(
     navCtrl: NavController,
-    pedidos : PedidoService
-  ) {}
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad PagesListPage');
-    this.pedidos = this.pedidoService.getPedidos();
+  ) {
+    this.pedidos= [
+      {id:1, ped:1, produto:2, nome:'Andre', med_a:36, med_b:27, med_c:33, med_d:30, med_e:14 , med_f:25, descricao:'Emiplegia usa esquerda'},
+      {id:1, ped:1, produto:1, nome:'Gustavo', med_a:38, med_b:27, med_c:33, med_d:30, med_e:16 , med_f:27, descricao:'Emiplegia usa direita'},
+      {id:1, ped:2, produto:1, nome:'Andriana', med_a:36, med_b:25, med_c:30, med_d:28, med_e:14 , med_f:25, descricao:'Paralisia da cintura para baixo'},
+      {id:1, ped:2, produto:2, nome:'Matheus', med_a:37, med_b:26, med_c:31, med_d:29, med_e:15 , med_f:26, descricao:'Paralisia cerebral, usa esquerda'},
+      {id:2, ped:3, produto:1, nome:'Vinicius', med_a:35, med_b:24, med_c:30, med_d:27, med_e:15 , med_f:26, descricao:'Paralisia cerebral, usa direita'},
+      {id:2, ped:3, produto:2, nome:'Vanessa', med_a:35, med_b:24, med_c:30, med_d:28, med_e:15 , med_f:26, descricao:'Amputação de pernas, canhoto'},
+      {id:2, ped:4, produto:2, nome:'Maria', med_a:35, med_b:24, med_c:30, med_d:27, med_e:13 , med_f:24, descricao:'Emiplegia usa esquerda'},
+      {id:2, ped:4, produto:1, nome:'Ricardo', med_a:38, med_b:27, med_c:33, med_d:29, med_e:15 , med_f:26, descricao:'Emiplegia usa direita'},
+    ]
+  }
 
+
+  back() {
+    this.navCtrl.setRoot('MenuPage');
   }
 
 }
