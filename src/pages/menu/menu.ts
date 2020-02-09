@@ -17,13 +17,16 @@ export class MenuPage {
   }
 
   order() {
-    this.navCtrl.push('CategoriasPage');
+    this.navCtrl.setRoot('CategoriasPage');
   }
 
+  usuarios() {
+    this.navCtrl.setRoot('EditPage');
+  }
   pedidos() {
-    this.navCtrl.push('ListPage');
+    this.navCtrl.setRoot('ListPage');
   }
   profile() {
-    this.navCtrl.push('ProfilePage');
+    this.navCtrl.setRoot('ProfilePage');
   }
 }

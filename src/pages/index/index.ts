@@ -12,7 +12,7 @@ export class IndexPage {
 
   constructor(
     public navCtrl: NavController,
-    public menu: MenuController) {
+    public menu: MenuController)  {
 
   }
 

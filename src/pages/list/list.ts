@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavParams, NavController } from 'ionic-angular';
+import { IonicPage, NavController } from 'ionic-angular';
 
 
 
@@ -11,11 +11,9 @@ import { IonicPage, NavParams, NavController } from 'ionic-angular';
 export class ListPage {
 
   public pedidos;
-  navCtrl: any;
-
 
   constructor(
-    navCtrl: NavController,
+    public navCtrl: NavController,
 
   ) {
     this.pedidos= [
@@ -31,8 +29,8 @@ export class ListPage {
   }
 
 
-  back() {
-    this.navCtrl.setRoot('MenuPage');
+  backMenu() {
+    this.navCtrl.push('MenuPage');
   }
 
 }
