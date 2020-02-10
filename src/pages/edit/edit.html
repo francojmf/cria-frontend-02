@@ -15,11 +15,13 @@
       <ion-avatar item-start>
         {{usuarios.id}}
       </ion-avatar>
-      <button ion-button color="danger" item-end outline>Apagar</button>
-      <button ion-button color="secundary" item-end outline> Editar </button>
-        <h2 style="font-weight: bolder">Usuário: {{usuarios.nome}} CPF/CNPJ: {{usuarios.cpf}} Fone: {{usuarios.telefone}}</h2>
-        <h3>Endereco: {{usuarios.logradouro}} {{usuarios.numero}} {{usuarios.complemento}}Bairro: {{usuarios.bairro}}
-             {{usuarios.cidade}} - {{usuarios.estado}} CEP: {{usuarios.cep}}</h3>
+      <h2 style="font-weight: bolder">Usuário: {{usuarios.nome}} CPF/CNPJ: {{usuarios.cpf}} Fone: {{usuarios.telefone}}</h2>
+      <h3>Endereco: {{usuarios.logradouro}} {{usuarios.numero}} {{usuarios.complemento}}Bairro: {{usuarios.bairro}}
+           {{usuarios.cidade}} - {{usuarios.estado}} CEP: {{usuarios.cep}}</h3>
+      <h3>Entidade: {{usuarios.entidade}} Atividade: {{usuarios.atividade}} Perfil: {{usuarios.perfil}} </h3>
+        <button ion-button item-end outline><ion-icon name="checkmark-circle"></ion-icon> Ativo </button>
+        <button ion-button color="secondary" item-end outline> Editar </button>
+
     </ion-item>
 
   </ion-list>

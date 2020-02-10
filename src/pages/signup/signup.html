@@ -41,6 +41,16 @@
     </ion-item>
     <p class="danger" *ngIf="formGroup.controls.senha.dirty && formGroup.controls.senha.errors" margin-left>Valor inválido</p>
     <ion-item>
+      <ion-label stacked>Entidade*</ion-label>
+      <ion-input formControlName="entidade" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Atividade* (Descreva que atividade faz em sua entidade)</ion-label>
+      <ion-input formControlName="atividade" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
       <ion-label stacked>Logradouro*</ion-label>
       <ion-input formControlName="logradouro" type="text"></ion-input>
     </ion-item>

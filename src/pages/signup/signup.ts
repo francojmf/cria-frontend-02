@@ -34,6 +34,8 @@ export class SignupPage {
       tipo : ['1', [Validators.required]],
       cpfOuCnpj : ['06134596280', [Validators.required, Validators.minLength(11), Validators.maxLength(14)]],
       senha : ['123', [Validators.required]],
+      entidade : ['Nome da Entidade', []],
+      atividade : ['Atividade que realiza', []],
       logradouro : ['Rua Nome da Via', [Validators.required]],
       numero : ['25', [Validators.required]],
       complemento : ['Apto 3', []],
@@ -93,7 +95,7 @@ export class SignupPage {
   }
 
   back() {
-    this.navCtrl.push('IndexPage');
+    this.navCtrl.setRoot('IndexPage');
   }
 
 }
