@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
         <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Lista de Pedidos</ion-title>
+    <ion-title>Meus Pedidos</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -15,10 +15,10 @@
       <ion-avatar item-start>
         Pedido {{pedidos.ped}}
       </ion-avatar>
-      <button ion-button item-end outline><ion-icon name="checkmark-circle"></ion-icon> Aprovado </button>
+      <button ion-button item-end outline>Aprovado </button>
       <button ion-button color="secondary" item-end outline> Editar </button>
-        <h2 style="font-weight: bolder">Usuário: {{pedidos.id}} Criança: {{pedidos.nome}}
-        Status: pendente Data entrega: -  Envio: -</h2>
+        <h2 style="font-weight: bolder">Criança: {{pedidos.nome}}  -
+        Status: aprovado - Data entrega: -  Envio: -</h2>
         <h3>Tipo CRIA: {{pedidos.produto}} Medidas A: {{pedidos.med_a}} B: {{pedidos.med_b}}
            C: {{pedidos.med_c}} D: {{pedidos.med_d}} E: {{pedidos.med_e}} F: {{pedidos.med_f}} Descrição: {{pedidos.descricao}}</h3>
     </ion-item>
