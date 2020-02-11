@@ -24,8 +24,8 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Perfil', component: 'ProfilePage' },
-      { title: 'Novo Pedido', component: 'CategoriasPage' },
+      { title: 'Perfil', component: 'Profile2Page'},
+      { title: 'Novo Pedido', component: 'CategoriasPage'},
       { title: 'Pedido Aberto', component: 'CartPage' },
       { title: 'Seus Pedidos', component: 'UserListPage'},
       { title: 'Menu Principal', component: 'MenuPage'},

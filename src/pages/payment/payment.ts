@@ -11,9 +11,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class PaymentPage {
 
   pedido: PedidosDTO;
-
   parcelas: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
   formGroup: FormGroup;
 
   constructor(

@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Forma de pagamento</ion-title>
+    <ion-title>Confirmação do Pedido</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -12,20 +12,21 @@
   <form [formGroup]="formGroup" (ngSubmit)="nextPage()">
     <ion-list radio-group formControlName="@type">
       <ion-list-header>
-        Tipo de pagamento
+        Quantidade de crianças
       </ion-list-header>
+
       <ion-item>
-        <ion-label>Pagamento com cartão</ion-label>
+        <ion-label>Pedido para várias crianças.</ion-label>
         <ion-radio checked="true" value="pagamentoComCartao"></ion-radio>
       </ion-item>
       <ion-item>
-        <ion-label>Pagamento com boleto</ion-label>
+        <ion-label>Pedido para uma criança apenas.</ion-label>
         <ion-radio value="pagamentoComBoleto"></ion-radio>
       </ion-item>
     </ion-list>
 
     <ion-item *ngIf="formGroup.value['@type'] == 'pagamentoComCartao'">
-      <ion-label stacked>Parcelas no cartão</ion-label>
+      <ion-label stacked>Quantidade de crianças neste pedido</ion-label>
       <ion-select formControlName="numeroDeParcelas">
         <ion-option *ngFor="let n of parcelas; first as f" [value]="n" [selected]="f">{{n}}</ion-option>
       </ion-select>

@@ -44,9 +44,14 @@ export class Profile2Page {
       });
   }
 
-  private findEndereco(id: string, list: EnderecosDTO[]) : EnderecosDTO {
+  public findEndereco(id: string, list: EnderecosDTO[]) : EnderecosDTO {
     let position = list.findIndex(x => x.id == id);
     return list[position];
+  }
+
+  public extractId(location : string) : string {
+    let position = location.lastIndexOf('/');
+    return location.substring(position + 1, location.length);
   }
 
   total() : number {
@@ -65,8 +70,4 @@ export class Profile2Page {
     this.navCtrl.setRoot('MenuPage');
   }
 
-  private extractId(location : string) : string {
-    let position = location.lastIndexOf('/');
-    return location.substring(position + 1, location.length);
-  }
 }

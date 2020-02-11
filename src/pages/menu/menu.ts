@@ -30,6 +30,6 @@ export class MenuPage {
     this.navCtrl.setRoot('ProfilePage');
   }
   profile2() {
-    this.navCtrl.setRoot('ProfilePage');
+    this.navCtrl.setRoot('Profile2Page');
   }
 }
