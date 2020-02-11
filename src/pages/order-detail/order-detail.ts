@@ -40,7 +40,7 @@ export class OrderDetailPage {
       this.showInsertOk();
     },
     error => {});
-    this.navCtrl.setRoot('DeliveryPage');
+    this.navCtrl.setRoot('PickAddressPage');
   }
 
   showInsertOk() {

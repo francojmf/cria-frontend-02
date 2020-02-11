@@ -15,11 +15,10 @@
   <h2 text-center>{{usuario?.nome}}</h2>
   <h3 text-center>{{usuario?.email}}</h3>
 
-
 </ion-list>
   <ion-card>
     <ion-card-header>
-
+      <h2 text-center></h2>
     </ion-card-header>
     <ion-item *ngIf="picture">
       <img [src]="picture">
@@ -32,5 +31,12 @@
       <button *ngIf="picture" ion-button outline block (click)="cancel()">Descartar imagem</button>
     </ion-item>
 -->
+
   </ion-card>
+  <ion-card>
+
+    <button ion-button block outline color="secondary" (click)="back()">Editar</button>
+    <button ion-button block outline (click)="back()">Voltar</button>
+  </ion-card>
+
 </ion-content>

@@ -29,4 +29,7 @@ export class MenuPage {
   profile() {
     this.navCtrl.setRoot('ProfilePage');
   }
+  profile2() {
+    this.navCtrl.setRoot('ProfilePage');
+  }
 }

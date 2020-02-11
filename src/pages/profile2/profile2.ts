@@ -10,10 +10,10 @@ import { PedidoService } from '../../services/domain/pedido.service';
 
 @IonicPage()
 @Component({
-  selector: 'page-order-confirmation',
-  templateUrl: 'order-confirmation.html',
+  selector: 'page-profile2',
+  templateUrl: 'profile2.html',
 })
-export class OrderConfirmationPage {
+export class Profile2Page {
 
   pedido: PedidosDTO;
   cartItems: CartItem[];

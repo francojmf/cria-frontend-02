@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Meus Pedidos</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+
+    <ion-item *ngFor="let pedidos of pedidos">
+      <ion-avatar item-start>
+        Pedido {{pedidos.ped}}
+      </ion-avatar>
+      <button ion-button item-end outline>Aprovado </button>
+      <button ion-button color="secondary" item-end outline> Editar </button>
+        <h2 style="font-weight: bolder">Criança: {{pedidos.nome}}  -
+        Status: aprovado - Data entrega: -  Envio: -</h2>
+        <h3>Tipo CRIA: {{pedidos.produto}} Medidas A: {{pedidos.med_a}} B: {{pedidos.med_b}}
+           C: {{pedidos.med_c}} D: {{pedidos.med_d}} E: {{pedidos.med_e}} F: {{pedidos.med_f}} Descrição: {{pedidos.descricao}}</h3>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-item>
+    <button ion-button block outline (click)="backMenu()">Voltar</button>
+  </ion-item>
+</ion-content>
+

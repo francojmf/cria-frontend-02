@@ -19,17 +19,22 @@
       <ion-list>
         <ion-item *ngFor="let item of cartItems">
           <ion-thumbnail item-start>
-            <img [src]="item.produto.imageUrl || 'assets/imgs/prod.jpg'" alt="">
+            <img [src]="item.produto.imageUrl || 'assets/imgs/prod.jpg'">
           </ion-thumbnail>
           <h2>{{item.produto.nome}}</h2>
           <p class="nolinebreak">{{item.quantidade}}</p>
+
+        </ion-item>
+
+        <ion-item>
+
         </ion-item>
       </ion-list>
     </ion-card>
 
     <ion-card>
         <ion-card-header>
-          Usuário
+          Usuario
         </ion-card-header>
         <ion-item>
           <h2>{{usuario?.nome}}</h2>
@@ -51,16 +56,10 @@
 
     <ion-card>
       <ion-card-header>
-        Pagamento
+        Confirmar
       </ion-card-header>
 
-      <ion-item *ngIf="pedido.entrega['@type']=='correios'">
-        <h3>Entrega pelos Correios</h3>
-        <p>Parcelas: {{pedido.entrega.numeroDeDias}}</p>
-      </ion-item>
-      <ion-item *ngIf="pedido.entrega['@type']=='contratado'">
-        <h3>Entrega com empresa contratada</h3>
-      </ion-item>
+
     </ion-card>
 
     <button ion-button block (click)="checkout()">Confirmar pedido</button>
@@ -78,7 +77,7 @@
         </ion-item>
     </ion-card>
 
-    <button ion-button block outline (click)="home()">Voltar</button>
+    <button ion-button block outline (click)="home()">Sair do Pedido</button>
   </div>
 
 </ion-content>

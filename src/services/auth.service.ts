@@ -11,16 +11,17 @@ import { CartService } from "./domain/cart.service";
 export class AuthService {
 
     jwtHelper: JwtHelper = new JwtHelper();
+    userId: LocalUser['id'];
 
     constructor(
-        public http: HttpClient, 
+        public http: HttpClient,
         public storage: StorageService,
         public cartService: CartService) {
     }
 
     authenticate(creds : CredenciaisDTO) {
         return this.http.post(
-            `${API_CONFIG.baseUrl}/login`, 
+            `${API_CONFIG.baseUrl}/login`,
             creds,
             {
                 observe: 'response',
@@ -30,7 +31,7 @@ export class AuthService {
 
     refreshToken() {
         return this.http.post(
-            `${API_CONFIG.baseUrl}/auth/refresh_token`, 
+            `${API_CONFIG.baseUrl}/auth/refresh_token`,
             {},
             {
                 observe: 'response',
@@ -42,7 +43,9 @@ export class AuthService {
         let tok = authorizationValue.substring(7);
         let user : LocalUser = {
             token: tok,
-            email: this.jwtHelper.decodeToken(tok).sub
+            email: this.jwtHelper.decodeToken(tok).sub,
+            id: this.userId,
+            nome : name
         };
         this.storage.setLocalUser(user);
         this.cartService.createOrClearCart();

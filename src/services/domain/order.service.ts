@@ -16,9 +16,12 @@ export class OrderService {
     }
 
     findById(id: string) {
-        return this.http.get(`${API_CONFIG.baseUrl}/produtos${id}`);
+        return this.http.get(`${API_CONFIG.baseUrl}/pedidos${id}`);
     }
 
+    findAll() : Observable<ItemDTO[]>  {
+      return this.http.get<ItemDTO[]>(`${API_CONFIG.baseUrl}/pedidos`);
+  }
 
     insert(obj : ItemDTO) {
         return this.http.post(

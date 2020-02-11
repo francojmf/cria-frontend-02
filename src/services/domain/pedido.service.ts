@@ -13,6 +13,9 @@ export class PedidoService {
     return this.http.get(`${API_CONFIG.baseUrl}/pedidos/${this.id}`);
 }
 
+  findOrderById(id: string) {
+  return this.http.get(`${API_CONFIG.baseUrl}/pedidos/${id}`);
+}
     constructor(public http: HttpClient) {
     }
 

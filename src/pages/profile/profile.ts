@@ -6,6 +6,10 @@ import { UsuarioService } from '../../services/domain/usuario.service';
 import { API_CONFIG } from '../../config/api.config';
 import { CameraOptions, Camera } from '@ionic-native/camera';
 import { DomSanitizer } from '@angular/platform-browser';
+import { EnderecosDTO } from '../../models/enderecos.dto';
+import { CidadeDTO } from '../../models/cidade.dto';
+import { PedidosDTO } from '../../models/pedidos.dto';
+import { PedidoService } from '../../services/domain/pedido.service';
 
 @IonicPage()
 @Component({
@@ -13,8 +17,10 @@ import { DomSanitizer } from '@angular/platform-browser';
   templateUrl: 'profile.html',
 })
 export class ProfilePage {
-
+  pedido: PedidosDTO;
   usuario: UsuarioDTO;
+  endereco: EnderecosDTO;
+  cidade: CidadeDTO;
   picture: string;
   profileImage;
   cameraOn: boolean = false;
@@ -24,6 +30,7 @@ export class ProfilePage {
     public navParams: NavParams,
     public storage: StorageService,
     public usuarioService: UsuarioService,
+    public pedidoService: PedidoService,
     public camera: Camera,
     public sanitizer: DomSanitizer) {
 
@@ -44,13 +51,19 @@ export class ProfilePage {
         },
         error => {
           if (error.status == 403) {
-            this.navCtrl.setRoot('HomePage');
+            this.navCtrl.setRoot('MenuPage');
           }
         });
     }
     else {
-      this.navCtrl.setRoot('HomePage');
+      this.navCtrl.setRoot('MenuPage');
     }
+  }
+
+
+  private findEndereco(id: string, list: EnderecosDTO[]) : EnderecosDTO {
+    let position = list.findIndex(x => x.id == id);
+    return list[position];
   }
 
   getImageIfExists() {
@@ -124,6 +137,10 @@ export class ProfilePage {
       },
       error => {
       });
+  }
+
+  back() {
+    this.navCtrl.setRoot('MenuPage');
   }
 
   cancel() {

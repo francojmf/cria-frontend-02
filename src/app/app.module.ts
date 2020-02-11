@@ -16,6 +16,8 @@ import { AuthInterceptorProvider } from '../interceptors/auth-interceptor';
 import { ProdutoService } from '../services/domain/produto.service';
 import { CartService } from '../services/domain/cart.service';
 import { ImageUtilService } from '../services/image-util.service';
+import { PedidoService } from '../services/domain/pedido.service';
+import { OrderService } from '../services/domain/order.service';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import { ImageUtilService } from '../services/image-util.service';
     AuthService,
     StorageService,
     UsuarioService,
+    OrderService,
+    PedidoService,
     ProdutoService,
     CartService,
     ImageUtilService
