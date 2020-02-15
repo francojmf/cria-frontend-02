@@ -5,10 +5,10 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @IonicPage()
 @Component({
-  selector: 'page-payment',
-  templateUrl: 'payment.html',
+  selector: 'page-order-pay',
+  templateUrl: 'order-pay.html',
 })
-export class PaymentPage {
+export class OrderPayPage {
 
   pedido: PedidosDTO;
   parcelas: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];

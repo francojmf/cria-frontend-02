@@ -10,21 +10,24 @@
 
 <ion-content padding>
 
-  <div>
-
-    <ion-card>
-        <ion-card-header>
-          Usuario
-        </ion-card-header>
-        <ion-item>
-          <h2>{{usuario?.nome}}</h2>
-          <p>{{usuario?.email}}</p>
-        </ion-item>
-    </ion-card>
-
+    <ion-avatar>
+      <img width="200" height="200" class="circle" [src]="profileImage" alt="">
+    </ion-avatar>
+    <ion-list show-update="true">
+    <h2 text-center>{{usuario?.nome}}</h2>
+    <h3 text-center>{{usuario?.email}}</h3>
+    </ion-list>
     <ion-card>
       <ion-card-header>
-        Endereço de entrega
+        <h2 text-center></h2>
+      </ion-card-header>
+      <ion-item *ngIf="picture">
+        <img [src]="picture">
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        Endereço:
       </ion-card-header>
 
       <ion-item>
@@ -38,12 +41,8 @@
       <ion-card-header>
         Confirmar
       </ion-card-header>
-
-
     </ion-card>
 
     <button ion-button block outline (click)="back()">Voltar</button>
-  </div>
-
 
 </ion-content>

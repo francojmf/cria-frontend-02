@@ -8,8 +8,8 @@ export interface PedidosDTO {
   [x: string]: any;
     usuario: RefDTO;
     enderecoDeEntrega: RefDTO;
-//    entrega: EntregaDTO;
+    entrega: EntregaDTO;
     pagamento: PagamentoDTO;
     itens: ItemPedidoDTO[];
-//    item: ItemDTO[];
+    item: ItemDTO[];
 }

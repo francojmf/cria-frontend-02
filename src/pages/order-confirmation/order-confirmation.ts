@@ -33,7 +33,6 @@ export class OrderConfirmationPage {
 
   ionViewDidLoad() {
     this.cartItems = this.cartService.getCart().items;
-
     this.usuarioService.findById(this.pedido.usuario.id)
       .subscribe(response => {
         this.usuario = response as UsuarioDTO;
