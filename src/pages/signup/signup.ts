@@ -33,7 +33,7 @@ export class SignupPage {
       email: ['joaquim-exemplo@gmail.com', [Validators.required, Validators.email]],
       tipo : ['1', [Validators.required]],
       cpfOuCnpj : ['06134596280', [Validators.required, Validators.minLength(11), Validators.maxLength(14)]],
-      senha : ['123', [Validators.required]],
+      senha : ['123abc', [Validators.required]],
       entidade : ['Nome da Entidade', []],
       atividade : ['Atividade que realiza', []],
       logradouro : ['Rua Nome da Via', [Validators.required]],
@@ -97,5 +97,4 @@ export class SignupPage {
   back() {
     this.navCtrl.setRoot('IndexPage');
   }
-
 }

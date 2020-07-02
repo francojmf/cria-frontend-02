@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ItemDTO } from '../../models/item.dto';
 import { OrderService } from '../../services/domain/order.service';
 import { AlertController } from 'ionic-angular/components/alert/alert-controller';
+import { PedidoService } from '../../services/domain/pedido.service';
 
 @IonicPage()
 @Component({
@@ -13,12 +14,14 @@ import { AlertController } from 'ionic-angular/components/alert/alert-controller
 export class OrderDetailPage {
 
   formGroup: FormGroup;
+  itens: ItemDTO;
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public formBuilder: FormBuilder,
     public orderService: OrderService,
+    public pedidoService: PedidoService,
     public alertCtrl: AlertController) {
 
   this.formGroup = this.formBuilder.group({
@@ -37,13 +40,13 @@ export class OrderDetailPage {
   nextPage(item: ItemDTO) {
     this.orderService.insert(this.formGroup.value)
     .subscribe(response => {
-      this.showInsertOk();
+      this.itemInsert();
     },
     error => {});
-    this.navCtrl.setRoot('PickAddressPage');
+    this.navCtrl.setRoot('PickAddressPage', {item: item});
   }
 
-  showInsertOk() {
+  itemInsert() {
     let alert = this.alertCtrl.create({
       title: 'Sucesso!',
       message: 'Pedido efetuado com sucesso',
@@ -58,5 +61,9 @@ export class OrderDetailPage {
       ]
     });
     alert.present();
+  }
+
+  back() {
+    this.navCtrl.setRoot('IndexPage');
   }
 }

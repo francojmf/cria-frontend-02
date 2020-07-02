@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.nelioalves.cursospringbootionic" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="cria.ionic.frontend" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Sistema de Pedidos</name>
     <description>TCC sobre Spring Boot e Ionic</description>
     <author email="francojmf31@gmail.com" href="https://github.com/francojmf/">JM Franco</author>
